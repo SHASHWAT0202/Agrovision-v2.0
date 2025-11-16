@@ -1,0 +1,217 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production builds
+dist/
+dist-ssr/
+build/
+out/
+.next/
+.nuxt/
+.vite/
+
+# Environment Variables (IMPORTANT: Keep sensitive data secure)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+*.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor directories and files
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+.jest/
+
+# TypeScript
+*.tsbuildinfo
+.tsbuildinfo
+
+# Optional npm cache
+.npm/
+.yarn/
+.pnpm-store/
+
+# ESLint cache
+.eslintcache
+.eslintcache.*
+
+# Prettier cache
+.prettiercache
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+virtualenv/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# Model files (if large)
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.pth
+*.pt
+*.onnx
+*.pb
+*.tflite
+*.ckpt
+*.weights
+*.model
+
+# Data files (uncomment if you want to exclude large datasets)
+# *.csv
+# *.parquet
+# *.feather
+# *.xlsx
+# *.xls
+
+# Google Earth Engine credentials
+swaoil-*.json
+*credentials*.json
+*service-account*.json
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.backup
+*.bak
+*.local
+.cache/
+
+# OS files
+Thumbs.db
+ehthumbs.db
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Desktop.ini
+
+# Lock files (keep the one you use)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+# bun.lockb
+
+# Vercel
+.vercel/
+
+# Netlify
+.netlify/
+
+# Turbo
+.turbo/
+
+# Storybook
+storybook-static/
+
+# Build artifacts
+*.map
+*.min.js
+*.min.css
+
+# PWA files
+sw.js
+workbox-*.js
+
+# Sentry
+.sentryclirc
+
+# Local development
+.local/
+
+# Static files (generated)
+static/
+uploads/
+downloads/
+temp_image.*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# pytest
+.pytest_cache/
+.tox/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Railway
+.railway/
+
+# Heroku
+.heroku/
+
+# Git
+.git/
+

@@ -1,0 +1,73 @@
+<!-- Smart Irrigation Tool SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" class="w-full h-full">
+  <defs>
+    <linearGradient id="deviceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4169E1"/>
+      <stop offset="50%" style="stop-color:#1E90FF"/>
+      <stop offset="100%" style="stop-color:#0066CC"/>
+    </linearGradient>
+    <linearGradient id="waterGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00BFFF"/>
+      <stop offset="50%" style="stop-color:#87CEEB"/>
+      <stop offset="100%" style="stop-color:#4682B4"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#F0F8FF"/>
+  
+  <!-- Main irrigation device -->
+  <rect x="150" y="100" width="100" height="120" rx="10" fill="url(#deviceGradient)"/>
+  
+  <!-- Screen display -->
+  <rect x="165" y="115" width="70" height="40" rx="3" fill="#000"/>
+  <rect x="170" y="120" width="60" height="30" rx="2" fill="#00FF00" opacity="0.8"/>
+  <text x="200" y="132" text-anchor="middle" font-family="monospace" font-size="8" fill="#000">MOISTURE:</text>
+  <text x="200" y="144" text-anchor="middle" font-family="monospace" font-size="8" fill="#000">65%</text>
+  
+  <!-- Control buttons -->
+  <circle cx="180" cy="175" r="8" fill="#FF4500"/>
+  <circle cx="200" cy="175" r="8" fill="#32CD32"/>
+  <circle cx="220" cy="175" r="8" fill="#FFD700"/>
+  
+  <!-- WiFi symbol -->
+  <path d="M200 65 Q190 70 190 80 M195 75 Q192 78 192 82 M200 78 Q200 78 200 82" stroke="#1E90FF" stroke-width="2" fill="none"/>
+  
+  <!-- Water pipes/tubes -->
+  <rect x="250" y="150" width="80" height="8" rx="4" fill="#666"/>
+  <rect x="320" y="150" width="8" height="50" rx="4" fill="#666"/>
+  <rect x="320" y="190" width="50" height="8" rx="4" fill="#666"/>
+  
+  <!-- Sprinkler heads -->
+  <circle cx="340" cy="210" r="8" fill="#4682B4"/>
+  <circle cx="360" cy="210" r="8" fill="#4682B4"/>
+  
+  <!-- Water droplets -->
+  <ellipse cx="340" cy="230" rx="2" ry="4" fill="url(#waterGradient)"/>
+  <ellipse cx="345" cy="235" rx="2" ry="4" fill="url(#waterGradient)"/>
+  <ellipse cx="350" cy="240" rx="2" ry="4" fill="url(#waterGradient)"/>
+  <ellipse cx="355" cy="245" rx="2" ry="4" fill="url(#waterGradient)"/>
+  <ellipse cx="360" cy="230" rx="2" ry="4" fill="url(#waterGradient)"/>
+  <ellipse cx="365" cy="235" rx="2" ry="4" fill="url(#waterGradient)"/>
+  
+  <!-- Plants being watered -->
+  <path d="M330 260 Q335 245 340 230" stroke="#32CD32" stroke-width="3" fill="none"/>
+  <path d="M370 260 Q375 245 380 230" stroke="#32CD32" stroke-width="3" fill="none"/>
+  <ellipse cx="335" cy="250" rx="8" ry="15" fill="#228B22" transform="rotate(15 335 250)"/>
+  <ellipse cx="375" cy="250" rx="8" ry="15" fill="#228B22" transform="rotate(-15 375 250)"/>
+  
+  <!-- Mobile phone showing app -->
+  <rect x="50" y="120" width="60" height="100" rx="8" fill="#333"/>
+  <rect x="55" y="130" width="50" height="80" rx="3" fill="#FFF"/>
+  <circle cx="80" cy="125" r="2" fill="#666"/>
+  <text x="80" y="145" text-anchor="middle" font-family="Arial" font-size="6" fill="#000">AGRO CONTROL</text>
+  <rect x="60" y="150" width="40" height="20" rx="2" fill="#32CD32"/>
+  <text x="80" y="162" text-anchor="middle" font-family="Arial" font-size="6" fill="white">START</text>
+  <rect x="60" y="175" width="40" height="15" rx="2" fill="#1E90FF"/>
+  <text x="80" y="185" text-anchor="middle" font-family="Arial" font-size="5" fill="white">Schedule: 6AM</text>
+  
+  <!-- Smart badge -->
+  <circle cx="350" cy="50" r="25" fill="#FF4500"/>
+  <text x="350" y="46" text-anchor="middle" font-family="Arial" font-size="8" fill="white" font-weight="bold">SMART</text>
+  <text x="350" y="56" text-anchor="middle" font-family="Arial" font-size="8" fill="white" font-weight="bold">IoT</text>
+</svg>

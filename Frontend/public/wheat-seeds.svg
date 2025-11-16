@@ -1,0 +1,82 @@
+<!-- Wheat Seeds SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" class="w-full h-full">
+  <defs>
+    <linearGradient id="wheatGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#DAA520"/>
+      <stop offset="50%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#B8860B"/>
+    </linearGradient>
+    <linearGradient id="stemGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#228B22"/>
+      <stop offset="100%" style="stop-color:#32CD32"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#FFFAF0"/>
+  
+  <!-- Wheat stalks -->
+  <g id="wheat1">
+    <path d="M120 250 Q125 200 130 150 Q135 100 140 70" stroke="url(#stemGradient)" stroke-width="3" fill="none"/>
+    <!-- Wheat grains -->
+    <ellipse cx="138" cy="80" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <ellipse cx="142" cy="90" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <ellipse cx="136" cy="100" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <ellipse cx="144" cy="110" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <ellipse cx="134" cy="120" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <ellipse cx="146" cy="130" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <!-- Awns (whiskers) -->
+    <path d="M142 80 L155 75" stroke="url(#wheatGradient)" stroke-width="1"/>
+    <path d="M146 90 L159 85" stroke="url(#wheatGradient)" stroke-width="1"/>
+    <path d="M140 100 L153 95" stroke="url(#wheatGradient)" stroke-width="1"/>
+  </g>
+  
+  <g id="wheat2">
+    <path d="M160 250 Q165 200 170 150 Q175 100 180 70" stroke="url(#stemGradient)" stroke-width="3" fill="none"/>
+    <ellipse cx="178" cy="85" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <ellipse cx="182" cy="95" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <ellipse cx="176" cy="105" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <ellipse cx="184" cy="115" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <ellipse cx="174" cy="125" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <path d="M182 85 L195 80" stroke="url(#wheatGradient)" stroke-width="1"/>
+    <path d="M186 95 L199 90" stroke="url(#wheatGradient)" stroke-width="1"/>
+  </g>
+  
+  <g id="wheat3">
+    <path d="M200 250 Q205 200 210 150 Q215 100 220 70" stroke="url(#stemGradient)" stroke-width="3" fill="none"/>
+    <ellipse cx="218" cy="80" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <ellipse cx="222" cy="90" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <ellipse cx="216" cy="100" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <ellipse cx="224" cy="110" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <ellipse cx="214" cy="120" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <ellipse cx="226" cy="130" rx="4" ry="8" fill="url(#wheatGradient)"/>
+    <path d="M222 80 L235 75" stroke="url(#wheatGradient)" stroke-width="1"/>
+    <path d="M226 90 L239 85" stroke="url(#wheatGradient)" stroke-width="1"/>
+  </g>
+  
+  <!-- Seeds scattered -->
+  <ellipse cx="280" cy="180" rx="3" ry="5" fill="url(#wheatGradient)" transform="rotate(20 280 180)"/>
+  <ellipse cx="300" cy="190" rx="3" ry="5" fill="url(#wheatGradient)" transform="rotate(-15 300 190)"/>
+  <ellipse cx="320" cy="200" rx="3" ry="5" fill="url(#wheatGradient)" transform="rotate(30 320 200)"/>
+  <ellipse cx="290" cy="210" rx="3" ry="5" fill="url(#wheatGradient)" transform="rotate(-10 290 210)"/>
+  <ellipse cx="310" cy="220" rx="3" ry="5" fill="url(#wheatGradient)" transform="rotate(25 310 220)"/>
+  
+  <!-- Seed packet -->
+  <rect x="280" y="100" width="80" height="100" rx="5" fill="#8B4513"/>
+  <rect x="285" y="110" width="70" height="25" fill="#DAA520"/>
+  <text x="320" y="125" text-anchor="middle" font-family="Arial" font-size="10" fill="white" font-weight="bold">WHEAT SEEDS</text>
+  <text x="320" y="150" text-anchor="middle" font-family="Arial" font-size="8" fill="#FFD700">Premium Quality</text>
+  <text x="320" y="165" text-anchor="middle" font-family="Arial" font-size="8" fill="#FFD700">Multiple Varieties</text>
+  <text x="320" y="180" text-anchor="middle" font-family="Arial" font-size="8" fill="#FFD700">High Germination</text>
+  
+  <!-- Variety pack indicator -->
+  <rect x="290" y="120" width="15" height="15" rx="2" fill="#CD853F"/>
+  <rect x="310" y="120" width="15" height="15" rx="2" fill="#DAA520"/>
+  <rect x="330" y="120" width="15" height="15" rx="2" fill="#B8860B"/>
+  
+  <!-- Quality badge -->
+  <circle cx="60" cy="80" r="30" fill="#DAA520"/>
+  <text x="60" y="72" text-anchor="middle" font-family="Arial" font-size="8" fill="white" font-weight="bold">VARIETY</text>
+  <text x="60" y="85" text-anchor="middle" font-family="Arial" font-size="8" fill="white" font-weight="bold">PACK</text>
+  <text x="60" y="96" text-anchor="middle" font-family="Arial" font-size="6" fill="#8B4513">5 TYPES</text>
+</svg>

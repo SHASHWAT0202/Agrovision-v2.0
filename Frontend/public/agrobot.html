@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agro Vision - Smart Farming Assistant</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* ---------- CSS Variables & Root ---------- */
+    :root {
+      --primary-green: #2d5016;
+      --secondary-green: #4a7c30;
+      --accent-gold: #f4a942;
+      --earth-brown: #8b4513;
+      --sky-blue: #87ceeb;
+      --light-sage: #a8b5a0;
+      --cream: #f5f5dc;
+      --deep-forest: #1a3a0f;
+      --shadow-soft: rgba(45, 80, 22, 0.15);
+      --shadow-medium: rgba(45, 80, 22, 0.25);
+      --gradient-earth: linear-gradient(135deg, #a8b5a0, #d4d4aa, #f5f5dc);
+      --gradient-sky: linear-gradient(180deg, #87ceeb, #98d4e8, #b8e6f0);
+    }
+
+    /* ---------- Global Styles ---------- */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--gradient-sky);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ---------- Animated Background ---------- */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(74, 124, 48, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(244, 169, 66, 0.05) 0%, transparent 50%);
+      animation: backgroundShift 20s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes backgroundShift {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    /* ---------- Floating Elements ---------- */
+    .floating-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .floating-leaf {
+      position: absolute;
+      color: var(--light-sage);
+      font-size: 24px;
+      opacity: 0.3;
+      animation: float 15s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.3;
+      }
+      90% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* ---------- Main Container ---------- */
+    .chat-container {
+      width: 95%;
+      max-width: 900px;
+      height: 85vh;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      box-shadow: 
+        0 20px 60px var(--shadow-medium),
+        0 8px 25px var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      z-index: 10;
+      animation: containerEntry 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes containerEntry {
+      0% {
+        transform: scale(0.8) translateY(50px);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* ---------- Header ---------- */
+    .chat-header {
+      background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .header-icon {
+      font-size: 28px;
+      animation: iconPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes iconPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .header-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .header-subtitle {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-top: 4px;
+      font-weight: 400;
+    }
+
+    /* Header decoration */
+    .chat-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(244, 169, 66, 0.1) 0%, transparent 70%);
+      animation: headerGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes headerGlow {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    /* ---------- Messages Area ---------- */
+    .chat-messages {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      background: var(--gradient-earth);
+      position: relative;
+    }
+
+    .chat-messages::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .chat-messages::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .chat-messages::-webkit-scrollbar-track {
+      background: rgba(0,0,0,0.05);
+      border-radius: 10px;
+    }
+
+    .chat-messages::-webkit-scrollbar-thumb {
+      background: var(--light-sage);
+      border-radius: 10px;
+    }
+
+    .message {
+      margin: 16px 0;
+      padding: 16px 20px;
+      border-radius: 20px;
+      max-width: 85%;
+      line-height: 1.5;
+      position: relative;
+      animation: messageSlide 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    @keyframes messageSlide {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .message.user {
+      background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
+      color: white;
+      margin-left: auto;
+      border-bottom-right-radius: 8px;
+      box-shadow: 0 6px 20px rgba(74, 124, 48, 0.3);
+    }
+
+    .message.user::before {
+      content: '';
+      position: absolute;
+      right: -8px;
+      bottom: 0;
+      width: 20px;
+      height: 20px;
+      background: var(--primary-green);
+      border-radius: 0 0 20px 0;
+      z-index: -1;
+    }
+
+    .message.bot {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--deep-forest);
+      margin-right: auto;
+      border-bottom-left-radius: 8px;
+      border: 1px solid rgba(168, 181, 160, 0.3);
+      position: relative;
+    }
+
+    .message.bot::before {
+      content: '🤖';
+      position: absolute;
+      left: -35px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      background: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      animation: botIconSpin 2s ease-in-out infinite;
+    }
+
+    @keyframes botIconSpin {
+      0%, 100% { transform: translateY(-50%) rotate(0deg) scale(1); }
+      50% { transform: translateY(-50%) rotate(5deg) scale(1.05); }
+    }
+
+    /* ---------- Input Area ---------- */
+    .chat-input {
+      display: flex;
+      background: white;
+      border-top: 1px solid rgba(168, 181, 160, 0.2);
+      position: relative;
+    }
+
+    .input-wrapper {
+      flex: 1;
+      position: relative;
+    }
+
+    .chat-input input {
+      width: 100%;
+      border: none;
+      padding: 20px 50px 20px 20px;
+      font-size: 1rem;
+      outline: none;
+      background: transparent;
+      color: var(--deep-forest);
+      font-family: inherit;
+    }
+
+    .chat-input input::placeholder {
+      color: var(--light-sage);
+      transition: color 0.3s ease;
+    }
+
+    .chat-input input:focus::placeholder {
+      color: var(--accent-gold);
+    }
+
+    .send-button {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
+      border: none;
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(74, 124, 48, 0.3);
+    }
+
+    .send-button:hover {
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 6px 20px rgba(74, 124, 48, 0.4);
+    }
+
+    .send-button:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    /* ---------- Loading Animation ---------- */
+    .typing-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 16px 0;
+      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      max-width: 85%;
+      margin-right: auto;
+      animation: messageSlide 0.5s ease;
+    }
+
+    .typing-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--light-sage);
+      animation: typingDot 1.4s ease-in-out infinite both;
+    }
+
+    .dot:nth-child(1) { animation-delay: -0.32s; }
+    .dot:nth-child(2) { animation-delay: -0.16s; }
+    .dot:nth-child(3) { animation-delay: 0s; }
+
+    @keyframes typingDot {
+      0%, 80%, 100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+      }
+      40% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+    }
+
+    /* ---------- Responsive Design ---------- */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      
+      .chat-container {
+        width: 100%;
+        height: 90vh;
+        border-radius: 16px;
+      }
+      
+      .message {
+        max-width: 90%;
+      }
+      
+      .header-title {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* ---------- Enhanced Animations ---------- */
+    .message:hover {
+      transform: translateY(-2px);
+      transition: transform 0.2s ease;
+    }
+
+    .chat-input:focus-within {
+      box-shadow: 0 -4px 20px rgba(74, 124, 48, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Elements -->
+  <div class="floating-elements" id="floatingElements"></div>
+
+  <div class="chat-container">
+    <div class="chat-header">
+      <div class="header-content">
+        <i class="fas fa-seedling header-icon"></i>
+        <div>
+          <div class="header-title">Agro Vision</div>
+          <div class="header-subtitle">Smart Farming Assistant</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="chat-messages" id="chatMessages">
+      <div class="message bot">
+        <div>🌾 Welcome to Agro Vision! I'm your intelligent farming assistant. Ask me anything about crops, soil management, weather patterns, pest control, or sustainable farming practices!</div>
+      </div>
+    </div>
+    
+    <div class="chat-input">
+      <div class="input-wrapper">
+        <input 
+          type="text" 
+          id="userInput" 
+          placeholder="Ask about farming, crops, soil health..."
+          autocomplete="off"
+        />
+        <button class="send-button" onclick="sendMessage()">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const API_URL = "https://agri-bot-main.onrender.com/chat/simple";
+    const chatMessages = document.getElementById("chatMessages");
+    const userInput = document.getElementById("userInput");
+
+    // Initialize floating elements
+    function createFloatingElements() {
+      const elements = ['🌿', '🌱', '🍃', '🌾', '🌻', '🦋', '🐝'];
+      const container = document.getElementById('floatingElements');
+      
+      setInterval(() => {
+        if (document.querySelectorAll('.floating-leaf').length < 5) {
+          const element = document.createElement('div');
+          element.classList.add('floating-leaf');
+          element.textContent = elements[Math.floor(Math.random() * elements.length)];
+          element.style.left = Math.random() * 100 + 'vw';
+          element.style.animationDuration = (Math.random() * 10 + 10) + 's';
+          element.style.animationDelay = Math.random() * 2 + 's';
+          container.appendChild(element);
+          
+          setTimeout(() => {
+            if (element.parentNode) {
+              element.parentNode.removeChild(element);
+            }
+          }, 20000);
+        }
+      }, 3000);
+    }
+
+    function showTypingIndicator() {
+      const typingDiv = document.createElement('div');
+      typingDiv.classList.add('typing-indicator');
+      typingDiv.id = 'typingIndicator';
+      typingDiv.innerHTML = `
+        <i class="fas fa-robot" style="color: var(--light-sage); margin-right: 8px;"></i>
+        <span style="color: var(--deep-forest); margin-right: 8px;">Thinking</span>
+        <div class="typing-dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      `;
+      chatMessages.appendChild(typingDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      return typingDiv;
+    }
+
+    function removeTypingIndicator() {
+      const typingIndicator = document.getElementById('typingIndicator');
+      if (typingIndicator) {
+        typingIndicator.remove();
+      }
+    }
+
+    async function sendMessage() {
+      const message = userInput.value.trim();
+      if (!message) return;
+
+      // Show user message
+      appendMessage(message, "user");
+      userInput.value = "";
+
+      // Show typing indicator
+      const typingIndicator = showTypingIndicator();
+
+      try {
+        // Add instruction for well-balanced responses
+        const enhancedMessage = `${message}\n\n[Please provide a clear, structured response with 5-7 key points. Include brief helpful details for each point (1-2 short sentences). Be informative but concise.]`;
+        
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ user_input: enhancedMessage }),
+        });
+
+        const data = await response.json();
+        removeTypingIndicator();
+        appendMessage(data.output, "bot");
+      } catch (error) {
+        removeTypingIndicator();
+        appendMessage("🌧️ I'm having trouble connecting to my knowledge base. Please try again in a moment!", "bot");
+      }
+    }
+
+    function formatBotMessage(text) {
+      // Split text into sentences
+      let formattedText = text;
+      
+      // Handle numbered lists (1., 2., etc.) and extract main points with some detail
+      formattedText = formattedText.replace(/(\d+)\.\s+([^:]+):\s*([^.]+\.[^.]*\.?)/g, (match, num, title, content) => {
+        // Keep first two sentences of each point for more context
+        const sentences = content.split('.');
+        const detailedContent = sentences.slice(0, 2).join('.').trim();
+        return `• ${title.trim()}: ${detailedContent}.\n`;
+      });
+      
+      // Handle dash/hyphen lists
+      formattedText = formattedText.replace(/[\-–—]\s+([^\-–—\n]+)/g, '• $1\n');
+      
+      // Handle "First,", "Second,", "Next,", etc.
+      formattedText = formattedText.replace(/(First|Second|Third|Fourth|Fifth|Next|Then|Finally|Also|Additionally)[,:]?\s+/gi, '\n• ');
+      
+      // Split long paragraphs into bullet points with moderate length
+      const sentences = formattedText.split(/\.\s+/);
+      if (sentences.length > 4 && !formattedText.includes('•')) {
+        formattedText = sentences
+          .filter(s => s.trim().length > 15)
+          .slice(0, 7) // Limit to 7 key points
+          .map(s => {
+            // Keep moderate length for context
+            let short = s.trim();
+            if (short.length > 120) {
+              short = short.substring(0, 120).trim() + '...';
+            }
+            return `• ${short}`;
+          })
+          .join('\n');
+      }
+      
+      return formattedText;
+    }
+
+    function appendMessage(text, sender) {
+      const msg = document.createElement("div");
+      msg.classList.add("message", sender);
+      
+      if (sender === "bot") {
+        // Format bot messages with bullet points
+        text = formatBotMessage(text);
+        
+        // Add some farming-related emojis to bot messages
+        const emojis = ['🌱', '🌾', '🚜', '🌿', '💚'];
+        const shouldAddEmoji = Math.random() > 0.7;
+        if (shouldAddEmoji && !text.includes('🌧️') && !text.startsWith('🌱')) {
+          const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+          text = `${randomEmoji} ${text}`;
+        }
+        
+        // Convert text to HTML with proper line breaks and bullets
+        msg.innerHTML = text
+          .split('\n')
+          .map(line => {
+            line = line.trim();
+            if (line.startsWith('•')) {
+              return `<div style="margin: 8px 0; padding-left: 0px; line-height: 1.6;">
+                        <span style="color: var(--accent-gold); font-weight: bold; margin-right: 8px;">▸</span>
+                        ${line.substring(1).trim()}
+                      </div>`;
+            }
+            return line ? `<div style="margin: 8px 0; line-height: 1.6;">${line}</div>` : '';
+          })
+          .join('');
+      } else {
+        msg.textContent = text;
+      }
+      
+      chatMessages.appendChild(msg);
+      
+      // Smooth scroll to bottom
+      setTimeout(() => {
+        chatMessages.scrollTo({
+          top: chatMessages.scrollHeight,
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
+
+    // Enhanced enter key handler
+    userInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+
+    // Auto-focus input
+    userInput.addEventListener("blur", () => {
+      setTimeout(() => userInput.focus(), 100);
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      createFloatingElements();
+      userInput.focus();
+    });
+
+    // Add visual feedback for input
+    userInput.addEventListener('input', (e) => {
+      const button = document.querySelector('.send-button');
+      if (e.target.value.trim()) {
+        button.style.background = 'linear-gradient(135deg, var(--accent-gold), #e6941a)';
+      } else {
+        button.style.background = 'linear-gradient(135deg, var(--secondary-green), var(--primary-green))';
+      }
+    });
+  </script>
+</body>
+</html>

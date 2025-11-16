@@ -1,0 +1,92 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bottleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4299E1" />
+      <stop offset="100%" stop-color="#2B6CB0" />
+    </linearGradient>
+    <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#63B3ED" />
+      <stop offset="100%" stop-color="#3182CE" />
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#68D391" />
+      <stop offset="100%" stop-color="#38A169" />
+    </linearGradient>
+    <radialGradient id="bubbleGrad" cx="50%" cy="30%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="150" cy="150" r="140" fill="#EBF8FF" stroke="#BEE3F8" stroke-width="2"/>
+  
+  <!-- Main bottle body -->
+  <rect x="100" y="80" width="100" height="160" rx="15" fill="url(#bottleGrad)" stroke="#2C5282" stroke-width="2"/>
+  
+  <!-- Bottle neck -->
+  <rect x="130" y="50" width="40" height="40" rx="8" fill="url(#bottleGrad)"/>
+  
+  <!-- Bottle cap -->
+  <rect x="125" y="40" width="50" height="20" rx="10" fill="#2D3748" stroke="#1A202C" stroke-width="2"/>
+  
+  <!-- Liquid content -->
+  <rect x="110" y="90" width="80" height="140" rx="10" fill="url(#liquidGrad)" opacity="0.8"/>
+  
+  <!-- Bubbles in liquid -->
+  <circle cx="135" cy="120" r="3" fill="url(#bubbleGrad)"/>
+  <circle cx="165" cy="140" r="2" fill="url(#bubbleGrad)"/>
+  <circle cx="145" cy="180" r="2.5" fill="url(#bubbleGrad)"/>
+  <circle cx="175" cy="200" r="2" fill="url(#bubbleGrad)"/>
+  
+  <!-- Label area -->
+  <rect x="110" y="130" width="80" height="80" rx="5" fill="white" opacity="0.9"/>
+  
+  <!-- Label text -->
+  <text x="150" y="150" text-anchor="middle" fill="#2D3748" font-family="Arial, sans-serif" font-size="14" font-weight="bold">LIQUID</text>
+  <text x="150" y="168" text-anchor="middle" fill="#4A5568" font-family="Arial, sans-serif" font-size="12">MICRO</text>
+  <text x="150" y="185" text-anchor="middle" fill="#4A5568" font-family="Arial, sans-serif" font-size="12">NUTRIENTS</text>
+  
+  <!-- Micronutrient symbols -->
+  <g fill="#2B6CB0" font-family="Arial, sans-serif" font-size="10" font-weight="bold">
+    <text x="125" y="200" text-anchor="middle">Zn</text>
+    <text x="150" y="200" text-anchor="middle">B</text>
+    <text x="175" y="200" text-anchor="middle">Mn</text>
+  </g>
+  
+  <!-- Dosage instructions -->
+  <rect x="115" y="245" width="70" height="15" rx="7" fill="#4A5568"/>
+  <text x="150" y="255" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">1:100 DILUTION</text>
+  
+  <!-- Plant growth illustration -->
+  <g transform="translate(220, 120)">
+    <path d="M0,80 Q-10,40 0,0" stroke="url(#leafGrad)" stroke-width="4" fill="none"/>
+    <path d="M0,80 Q10,40 0,0" stroke="url(#leafGrad)" stroke-width="4" fill="none"/>
+    <circle cx="0" cy="0" r="6" fill="#68D391"/>
+    
+    <!-- Leaf details -->
+    <ellipse cx="-8" cy="20" rx="6" ry="12" fill="url(#leafGrad)" opacity="0.8"/>
+    <ellipse cx="8" cy="25" rx="6" ry="12" fill="url(#leafGrad)" opacity="0.8"/>
+    <ellipse cx="-5" cy="45" rx="5" ry="10" fill="url(#leafGrad)" opacity="0.8"/>
+    <ellipse cx="5" cy="50" rx="5" ry="10" fill="url(#leafGrad)" opacity="0.8"/>
+  </g>
+  
+  <!-- Concentration indicator -->
+  <rect x="40" y="100" width="30" height="80" rx="15" fill="#E2E8F0" stroke="#CBD5E0" stroke-width="2"/>
+  <rect x="45" y="160" width="20" height="15" rx="2" fill="#4299E1"/>
+  <text x="35" y="95" fill="#4A5568" font-family="Arial, sans-serif" font-size="8">CONC.</text>
+  
+  <!-- Application arrows -->
+  <g stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#4A5568"/>
+      </marker>
+    </defs>
+    <path d="M200,160 Q220,140 240,120"/>
+  </g>
+  
+  <!-- Quality certification -->
+  <circle cx="180" cy="100" r="12" fill="#48BB78" stroke="white" stroke-width="2"/>
+  <text x="180" y="106" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="bold">ISO</text>
+</svg>

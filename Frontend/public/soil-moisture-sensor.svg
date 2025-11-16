@@ -1,0 +1,104 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="deviceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A5568" />
+      <stop offset="100%" stop-color="#2D3748" />
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A202C" />
+      <stop offset="100%" stop-color="#2D3748" />
+    </linearGradient>
+    <linearGradient id="probeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#718096" />
+      <stop offset="100%" stop-color="#4A5568" />
+    </linearGradient>
+    <linearGradient id="soilGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B4513" />
+      <stop offset="100%" stop-color="#654321" />
+    </linearGradient>
+    <radialGradient id="waveGrad" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#4299E1" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#3182CE" stop-opacity="0.2"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="150" cy="150" r="140" fill="#F7FAFC" stroke="#E2E8F0" stroke-width="2"/>
+  
+  <!-- Main device body -->
+  <rect x="100" y="60" width="100" height="80" rx="10" fill="url(#deviceGrad)" stroke="#1A202C" stroke-width="2"/>
+  
+  <!-- Digital display -->
+  <rect x="110" y="75" width="80" height="50" rx="5" fill="url(#screenGrad)"/>
+  
+  <!-- Display content -->
+  <rect x="115" y="80" width="70" height="40" rx="3" fill="#1A202C"/>
+  
+  <!-- Moisture reading -->
+  <text x="150" y="95" text-anchor="middle" fill="#4299E1" font-family="monospace" font-size="16" font-weight="bold">67%</text>
+  <text x="150" y="110" text-anchor="middle" fill="#63B3ED" font-family="monospace" font-size="10">MOISTURE</text>
+  
+  <!-- Status LED -->
+  <circle cx="175" cy="70" r="3" fill="#48BB78"/>
+  
+  <!-- Control buttons -->
+  <circle cx="120" cy="155" r="6" fill="#4A5568" stroke="#2D3748" stroke-width="1"/>
+  <circle cx="150" cy="155" r="6" fill="#4A5568" stroke="#2D3748" stroke-width="1"/>
+  <circle cx="180" cy="155" r="6" fill="#4A5568" stroke="#2D3748" stroke-width="1"/>
+  
+  <!-- Wireless indicator -->
+  <g transform="translate(85, 65)">
+    <path d="M5,15 Q10,10 15,15" stroke="#4299E1" stroke-width="2" fill="none"/>
+    <path d="M3,18 Q10,8 17,18" stroke="#4299E1" stroke-width="2" fill="none"/>
+    <path d="M1,21 Q10,6 19,21" stroke="#4299E1" stroke-width="2" fill="none"/>
+    <circle cx="10" cy="20" r="2" fill="#4299E1"/>
+  </g>
+  
+  <!-- Probe cable -->
+  <path d="M150,140 Q160,160 170,180 Q180,200 190,220" stroke="#2D3748" stroke-width="4" fill="none"/>
+  
+  <!-- Soil probe -->
+  <rect x="185" y="220" width="10" height="40" rx="5" fill="url(#probeGrad)"/>
+  
+  <!-- Probe tip -->
+  <polygon points="190,260 185,270 195,270" fill="#718096"/>
+  
+  <!-- Soil representation -->
+  <ellipse cx="150" cy="250" rx="100" ry="30" fill="url(#soilGrad)"/>
+  
+  <!-- Soil layers -->
+  <ellipse cx="150" cy="245" rx="90" ry="25" fill="#8B4513" opacity="0.7"/>
+  <ellipse cx="150" cy="240" rx="80" ry="20" fill="#A0522D" opacity="0.5"/>
+  
+  <!-- Moisture particles -->
+  <circle cx="130" cy="240" r="1.5" fill="#4299E1" opacity="0.6"/>
+  <circle cx="170" cy="250" r="1.5" fill="#4299E1" opacity="0.6"/>
+  <circle cx="110" cy="255" r="1" fill="#4299E1" opacity="0.6"/>
+  <circle cx="210" cy="245" r="1" fill="#4299E1" opacity="0.6"/>
+  <circle cx="160" cy="265" r="1.5" fill="#4299E1" opacity="0.6"/>
+  
+  <!-- Wireless signal waves -->
+  <g transform="translate(190, 200)">
+    <circle cx="0" cy="0" r="15" fill="url(#waveGrad)"/>
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#4299E1" stroke-width="2" opacity="0.4"/>
+    <circle cx="0" cy="0" r="35" fill="none" stroke="#4299E1" stroke-width="2" opacity="0.2"/>
+  </g>
+  
+  <!-- Mobile phone connection -->
+  <rect x="220" y="80" width="40" height="70" rx="8" fill="#4A5568" stroke="#2D3748" stroke-width="2"/>
+  <rect x="225" y="90" width="30" height="50" rx="3" fill="#1A202C"/>
+  
+  <!-- Phone display -->
+  <text x="240" y="110" text-anchor="middle" fill="#4299E1" font-family="monospace" font-size="8">67%</text>
+  <text x="240" y="125" text-anchor="middle" fill="#63B3ED" font-family="monospace" font-size="6">SOIL DATA</text>
+  
+  <!-- Connection line -->
+  <path d="M205,120 Q215,110 220,115" stroke="#4299E1" stroke-width="2" stroke-dasharray="3,3" fill="none"/>
+  
+  <!-- Brand label -->
+  <text x="150" y="40" text-anchor="middle" fill="#2D3748" font-family="Arial, sans-serif" font-size="12" font-weight="bold">SMART SENSOR</text>
+  
+  <!-- Battery indicator -->
+  <rect x="155" y="165" width="15" height="8" rx="2" fill="#48BB78" stroke="#2D3748" stroke-width="1"/>
+  <rect x="168" y="167" width="2" height="4" rx="1" fill="#2D3748"/>
+</svg>

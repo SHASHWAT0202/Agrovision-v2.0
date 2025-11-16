@@ -1,0 +1,99 @@
+<!-- Soil pH Meter SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" class="w-full h-full">
+  <defs>
+    <linearGradient id="meterGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4169E1"/>
+      <stop offset="50%" style="stop-color:#1E90FF"/>
+      <stop offset="100%" style="stop-color:#0066CC"/>
+    </linearGradient>
+    <linearGradient id="screenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000"/>
+      <stop offset="100%" style="stop-color:#333"/>
+    </linearGradient>
+    <linearGradient id="probeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C0C0C0"/>
+      <stop offset="100%" style="stop-color:#808080"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#E6F2FF"/>
+  
+  <!-- Main device body -->
+  <rect x="150" y="80" width="100" height="140" rx="12" fill="url(#meterGradient)"/>
+  
+  <!-- Digital display -->
+  <rect x="165" y="100" width="70" height="50" rx="5" fill="url(#screenGradient)"/>
+  <rect x="170" y="105" width="60" height="40" rx="3" fill="#000" stroke="#333" stroke-width="1"/>
+  
+  <!-- pH Reading Display -->
+  <text x="200" y="120" text-anchor="middle" font-family="monospace" font-size="12" fill="#00FF00" font-weight="bold">pH 6.8</text>
+  <text x="200" y="135" text-anchor="middle" font-family="monospace" font-size="8" fill="#00FF00">OPTIMAL</text>
+  
+  <!-- Control buttons -->
+  <rect x="170" y="160" width="20" height="15" rx="3" fill="#FF4500"/>
+  <text x="180" y="170" text-anchor="middle" font-family="Arial" font-size="6" fill="white">ON</text>
+  
+  <rect x="200" y="160" width="20" height="15" rx="3" fill="#32CD32"/>
+  <text x="210" y="170" text-anchor="middle" font-family="Arial" font-size="6" fill="white">CAL</text>
+  
+  <!-- Brand/Model label -->
+  <text x="200" y="195" text-anchor="middle" font-family="Arial" font-size="8" fill="white" font-weight="bold">pH-100 DIGITAL</text>
+  <text x="200" y="205" text-anchor="middle" font-family="Arial" font-size="6" fill="#FFD700">PROFESSIONAL</text>
+  
+  <!-- Probe/Electrode -->
+  <rect x="195" y="220" width="10" height="60" rx="5" fill="url(#probeGradient)"/>
+  <circle cx="200" cy="285" r="4" fill="#FFD700"/>
+  
+  <!-- Cable -->
+  <path d="M200 220 Q190 230 185 240 Q180 250 175 260 Q170 270 165 280" stroke="#333" stroke-width="3" fill="none"/>
+  
+  <!-- Soil sample -->
+  <ellipse cx="160" cy="280" rx="25" ry="8" fill="#8B4513"/>
+  <ellipse cx="160" cy="275" rx="25" ry="8" fill="#A0522D"/>
+  
+  <!-- pH Scale -->
+  <rect x="60" y="120" width="20" height="120" rx="10" fill="#FFF" stroke="#333" stroke-width="2"/>
+  
+  <!-- pH Scale Colors -->
+  <rect x="65" y="125" width="10" height="15" fill="#FF0000"/> <!-- Acidic -->
+  <rect x="65" y="140" width="10" height="15" fill="#FF4500"/>
+  <rect x="65" y="155" width="10" height="15" fill="#FFA500"/>
+  <rect x="65" y="170" width="10" height="15" fill="#FFD700"/>
+  <rect x="65" y="185" width="10" height="15" fill="#ADFF2F"/> <!-- Neutral -->
+  <rect x="65" y="200" width="10" height="15" fill="#32CD32"/>
+  <rect x="65" y="215" width="10" height="15" fill="#228B22"/>
+  <rect x="65" y="230" width="10" height="15" fill="#006400"/> <!-- Alkaline -->
+  
+  <!-- pH Scale Numbers -->
+  <text x="90" y="135" font-family="Arial" font-size="8" fill="#333">14</text>
+  <text x="90" y="150" font-family="Arial" font-size="8" fill="#333">12</text>
+  <text x="90" y="165" font-family="Arial" font-size="8" fill="#333">10</text>
+  <text x="90" y="180" font-family="Arial" font-size="8" fill="#333">8</text>
+  <text x="90" y="195" font-family="Arial" font-size="8" fill="#333" font-weight="bold">7</text>
+  <text x="90" y="210" font-family="Arial" font-size="8" fill="#333">5</text>
+  <text x="90" y="225" font-family="Arial" font-size="8" fill="#333">3</text>
+  <text x="90" y="240" font-family="Arial" font-size="8" fill="#333">1</text>
+  
+  <!-- pH Scale Labels -->
+  <text x="45" y="140" text-anchor="middle" font-family="Arial" font-size="6" fill="#FF0000" font-weight="bold">ALKALINE</text>
+  <text x="45" y="195" text-anchor="middle" font-family="Arial" font-size="6" fill="#32CD32" font-weight="bold">NEUTRAL</text>
+  <text x="45" y="235" text-anchor="middle" font-family="Arial" font-size="6" fill="#006400" font-weight="bold">ACIDIC</text>
+  
+  <!-- Features -->
+  <rect x="280" y="100" width="80" height="80" rx="5" fill="white" stroke="#333" stroke-width="1"/>
+  <text x="320" y="115" text-anchor="middle" font-family="Arial" font-size="8" fill="#333" font-weight="bold">FEATURES</text>
+  <text x="285" y="130" font-family="Arial" font-size="6" fill="#333">✓ Digital Display</text>
+  <text x="285" y="140" font-family="Arial" font-size="6" fill="#333">✓ Auto Calibration</text>
+  <text x="285" y="150" font-family="Arial" font-size="6" fill="#333">✓ Moisture Detection</text>
+  <text x="285" y="160" font-family="Arial" font-size="6" fill="#333">✓ Temperature Comp.</text>
+  <text x="285" y="170" font-family="Arial" font-size="6" fill="#333">✓ Waterproof Probe</text>
+  
+  <!-- Accuracy badge -->
+  <circle cx="320" cy="50" r="25" fill="#32CD32"/>
+  <text x="320" y="45" text-anchor="middle" font-family="Arial" font-size="7" fill="white" font-weight="bold">±0.1pH</text>
+  <text x="320" y="55" text-anchor="middle" font-family="Arial" font-size="7" fill="white" font-weight="bold">ACCURACY</text>
+  
+  <!-- Current measurement indicator -->
+  <polygon points="83,192 77,188 77,196" fill="#FF4500"/>
+</svg>

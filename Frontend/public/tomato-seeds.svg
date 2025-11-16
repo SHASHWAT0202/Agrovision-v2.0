@@ -1,0 +1,54 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tomatoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B6B" />
+      <stop offset="100%" stop-color="#E53E3E" />
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#68D391" />
+      <stop offset="100%" stop-color="#38A169" />
+    </linearGradient>
+    <linearGradient id="packetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7FAFC" />
+      <stop offset="100%" stop-color="#EDF2F7" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="150" cy="150" r="140" fill="#FFF5F5" stroke="#FED7D7" stroke-width="2"/>
+  
+  <!-- Seed packet -->
+  <rect x="80" y="80" width="140" height="180" rx="8" fill="url(#packetGrad)" stroke="#CBD5E0" stroke-width="2"/>
+  
+  <!-- Packet label area -->
+  <rect x="90" y="90" width="120" height="60" rx="4" fill="#FF6B6B"/>
+  
+  <!-- Product text -->
+  <text x="150" y="115" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">TOMATO</text>
+  <text x="150" y="135" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12">HYBRID SEEDS</text>
+  
+  <!-- Tomato illustration -->
+  <circle cx="130" cy="190" r="20" fill="url(#tomatoGrad)"/>
+  <circle cx="170" cy="190" r="20" fill="url(#tomatoGrad)"/>
+  <circle cx="150" cy="210" r="18" fill="url(#tomatoGrad)"/>
+  
+  <!-- Tomato stems -->
+  <path d="M130,170 Q135,165 140,170" stroke="url(#leafGrad)" stroke-width="3" fill="none"/>
+  <path d="M170,170 Q165,165 160,170" stroke="url(#leafGrad)" stroke-width="3" fill="none"/>
+  <path d="M150,192 Q155,187 160,192" stroke="url(#leafGrad)" stroke-width="3" fill="none"/>
+  
+  <!-- Seeds scattered -->
+  <circle cx="110" cy="230" r="2" fill="#8B4513"/>
+  <circle cx="115" cy="235" r="2" fill="#8B4513"/>
+  <circle cx="190" cy="230" r="2" fill="#8B4513"/>
+  <circle cx="185" cy="235" r="2" fill="#8B4513"/>
+  <circle cx="150" cy="240" r="2" fill="#8B4513"/>
+  
+  <!-- Quality badge -->
+  <circle cx="200" cy="100" r="18" fill="#48BB78" stroke="white" stroke-width="2"/>
+  <text x="200" y="106" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">F1</text>
+  
+  <!-- Premium label -->
+  <rect x="95" y="160" width="110" height="15" rx="7" fill="#E53E3E"/>
+  <text x="150" y="171" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9" font-weight="bold">DISEASE RESISTANT</text>
+</svg>

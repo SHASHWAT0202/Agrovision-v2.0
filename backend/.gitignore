@@ -1,0 +1,143 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+virtualenv/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# Model files (if large)
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.pth
+*.pt
+*.onnx
+*.pb
+*.tflite
+*.ckpt
+*.weights
+*.model
+
+# Data files
+*.csv
+*.json
+*.parquet
+*.feather
+*.xlsx
+*.xls
+
+# Google Earth Engine credentials
+*.json
+!package.json
+!tsconfig.json
+swaoil-*.json
+*credentials*.json
+*service-account*.json
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Temporary files
+*.tmp
+*.temp
+temp_*
+tmp/
+temp/
+*.bak
+*.swp
+*~
+
+# Static files (generated)
+static/
+uploads/
+downloads/
+temp_image.*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# pytest
+.pytest_cache/
+.tox/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Railway
+.railway/
+
+# Heroku
+.heroku/

@@ -1,0 +1,43 @@
+<!-- Premium Corn Seeds SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" class="w-full h-full">
+  <defs>
+    <linearGradient id="cornGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFA500"/>
+      <stop offset="50%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#FFA500"/>
+    </linearGradient>
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#32CD32"/>
+      <stop offset="50%" style="stop-color:#228B22"/>
+      <stop offset="100%" style="stop-color:#006400"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#F0F8FF"/>
+  
+  <!-- Corn seeds scattered -->
+  <ellipse cx="120" cy="100" rx="8" ry="12" fill="url(#cornGradient)" transform="rotate(15 120 100)"/>
+  <ellipse cx="160" cy="120" rx="8" ry="12" fill="url(#cornGradient)" transform="rotate(-10 160 120)"/>
+  <ellipse cx="200" cy="90" rx="8" ry="12" fill="url(#cornGradient)" transform="rotate(25 200 90)"/>
+  <ellipse cx="140" cy="160" rx="8" ry="12" fill="url(#cornGradient)" transform="rotate(-20 140 160)"/>
+  <ellipse cx="180" cy="180" rx="8" ry="12" fill="url(#cornGradient)" transform="rotate(30 180 180)"/>
+  <ellipse cx="240" cy="140" rx="8" ry="12" fill="url(#cornGradient)" transform="rotate(-5 240 140)"/>
+  
+  <!-- Corn plant illustration -->
+  <path d="M300 250 Q305 200 310 150 Q315 100 320 80" stroke="url(#leafGradient)" stroke-width="6" fill="none"/>
+  <ellipse cx="315" cy="120" rx="15" ry="40" fill="url(#leafGradient)" transform="rotate(30 315 120)"/>
+  <ellipse cx="325" cy="140" rx="15" ry="40" fill="url(#leafGradient)" transform="rotate(-20 325 140)"/>
+  
+  <!-- Package/bag illustration -->
+  <rect x="50" y="180" width="80" height="100" rx="5" fill="#8B4513" opacity="0.8"/>
+  <rect x="55" y="185" width="70" height="20" fill="#D2691E"/>
+  <text x="90" y="198" text-anchor="middle" font-family="Arial" font-size="10" fill="white">PREMIUM</text>
+  <text x="90" y="240" text-anchor="middle" font-family="Arial" font-size="12" fill="#FFD700" font-weight="bold">CORN</text>
+  <text x="90" y="255" text-anchor="middle" font-family="Arial" font-size="12" fill="#FFD700" font-weight="bold">SEEDS</text>
+  
+  <!-- Quality badge -->
+  <circle cx="350" cy="50" r="30" fill="#32CD32"/>
+  <text x="350" y="46" text-anchor="middle" font-family="Arial" font-size="10" fill="white" font-weight="bold">HIGH</text>
+  <text x="350" y="58" text-anchor="middle" font-family="Arial" font-size="10" fill="white" font-weight="bold">YIELD</text>
+</svg>

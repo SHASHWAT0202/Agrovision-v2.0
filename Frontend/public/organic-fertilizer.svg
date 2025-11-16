@@ -1,0 +1,51 @@
+<!-- Organic Fertilizer SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" class="w-full h-full">
+  <defs>
+    <linearGradient id="bagGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B4513"/>
+      <stop offset="50%" style="stop-color:#A0522D"/>
+      <stop offset="100%" style="stop-color:#654321"/>
+    </linearGradient>
+    <linearGradient id="fertilizerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B4513"/>
+      <stop offset="50%" style="stop-color:#DEB887"/>
+      <stop offset="100%" style="stop-color:#8B4513"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#E6F3E6"/>
+  
+  <!-- Large fertilizer bag -->
+  <path d="M120 80 Q125 75 135 75 L235 75 Q245 75 250 80 L250 250 Q250 260 240 260 L130 260 Q120 260 120 250 Z" fill="url(#bagGradient)"/>
+  
+  <!-- Bag label -->
+  <rect x="140" y="100" width="90" height="60" rx="5" fill="#228B22"/>
+  <text x="185" y="115" text-anchor="middle" font-family="Arial" font-size="12" fill="white" font-weight="bold">ORGANIC</text>
+  <text x="185" y="135" text-anchor="middle" font-family="Arial" font-size="14" fill="#FFD700" font-weight="bold">FERTILIZER</text>
+  <text x="185" y="150" text-anchor="middle" font-family="Arial" font-size="8" fill="white">100% Natural</text>
+  
+  <!-- Fertilizer granules spilling out -->
+  <ellipse cx="260" cy="240" rx="3" ry="3" fill="url(#fertilizerGradient)"/>
+  <ellipse cx="270" cy="245" rx="3" ry="3" fill="url(#fertilizerGradient)"/>
+  <ellipse cx="275" cy="235" rx="3" ry="3" fill="url(#fertilizerGradient)"/>
+  <ellipse cx="285" cy="250" rx="3" ry="3" fill="url(#fertilizerGradient)"/>
+  <ellipse cx="265" cy="255" rx="3" ry="3" fill="url(#fertilizerGradient)"/>
+  <ellipse cx="280" cy="260" rx="3" ry="3" fill="url(#fertilizerGradient)"/>
+  
+  <!-- Plant growing -->
+  <path d="M320 260 Q325 220 330 180 Q335 140 340 100" stroke="#32CD32" stroke-width="4" fill="none"/>
+  <ellipse cx="335" cy="140" rx="12" ry="25" fill="#228B22" transform="rotate(20 335 140)"/>
+  <ellipse cx="345" cy="160" rx="12" ry="25" fill="#228B22" transform="rotate(-15 345 160)"/>
+  <ellipse cx="330" cy="180" rx="12" ry="25" fill="#228B22" transform="rotate(25 330 180)"/>
+  
+  <!-- Organic certification badge -->
+  <circle cx="60" cy="60" r="35" fill="#228B22"/>
+  <text x="60" y="50" text-anchor="middle" font-family="Arial" font-size="10" fill="white" font-weight="bold">100%</text>
+  <text x="60" y="65" text-anchor="middle" font-family="Arial" font-size="10" fill="white" font-weight="bold">ORGANIC</text>
+  <text x="60" y="78" text-anchor="middle" font-family="Arial" font-size="8" fill="#FFD700">CERTIFIED</text>
+  
+  <!-- Leaves decoration -->
+  <path d="M50 150 Q45 140 55 135 Q65 140 60 150 Q55 160 50 150" fill="#32CD32"/>
+  <path d="M370 180 Q365 170 375 165 Q385 170 380 180 Q375 190 370 180" fill="#32CD32"/>
+</svg>
