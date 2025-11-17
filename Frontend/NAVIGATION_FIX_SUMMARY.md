@@ -65,7 +65,7 @@
 - All navbar links now work correctly
 - Smooth scrolling to all sections
 - "Plant ID" button properly navigates to Plant Classification
-- External redirect to serenitycm.vercel.app works flawlessly
+- External redirect to `agrovisioncm.vercel.app` works flawlessly
 
 ### 📖 **Streamlined Documentation**
 - **One-stop resource** for all project information
