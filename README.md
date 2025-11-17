@@ -141,7 +141,7 @@ For detailed installation and configuration instructions, please refer to:
 
 ## 🌐 Live Demo
 
-**🔗 ADD Deployed website link here**
+**🔗 [AgroVision](https://agrovisioncm.vercel.app/)**
 
 Experience the full platform with all features including:
 - Real-time weather forecasting
