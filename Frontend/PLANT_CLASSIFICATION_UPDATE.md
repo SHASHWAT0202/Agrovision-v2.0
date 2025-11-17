@@ -7,7 +7,7 @@
 - **Removed**: Complex API testing, CORS handling, and error debugging code
 - **Removed**: File upload functionality, image preview, and analysis processing
 - **Removed**: Demo mode and mock data systems
-- **Added**: Simple, elegant redirect button to `serenitycm.vercel.app`
+- **Added**: Simple, elegant redirect button to `agrovisioncm.vercel.app`
 
 ### 🎨 **New Design**
 - **Clean Interface**: Professional call-to-action card design
@@ -25,7 +25,7 @@
 
 ### 🔗 **User Experience**
 - **One-Click Access**: Simple button click opens your plant ID app
-- **External Integration**: Seamlessly redirects to `serenitycm.vercel.app`
+- **External Integration**: Seamlessly redirects to `agrovisioncm.vercel.app`
 - **Clear Messaging**: Users understand they'll access advanced plant AI
 - **Visual Appeal**: Professional design maintains brand consistency
 
