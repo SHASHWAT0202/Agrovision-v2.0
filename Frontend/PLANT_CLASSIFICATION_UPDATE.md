@@ -25,7 +25,7 @@
 
 ### 🔗 **User Experience**
 - **One-Click Access**: Simple button click opens your plant ID app
-- **External Integration**: Seamlessly redirects to `https://agrovisioncm.vercel.app/`
+- **External Integration**: Seamlessly redirects to `agrovisioncm.vercel.app/`
 - **Clear Messaging**: Users understand they'll access advanced plant AI
 - **Visual Appeal**: Professional design maintains brand consistency
 
