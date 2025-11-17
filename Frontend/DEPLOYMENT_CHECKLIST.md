@@ -13,7 +13,7 @@
 - [x] TypeScript compilation working
 - [x] No critical lint errors (minor warnings acceptable)
 - [x] All components functional
-- [x] Plant Classification redirects to serenitycm.vercel.app
+- [x] Plant Classification redirects to `agrovisioncm.vercel.app`
 
 ### 🗺️ **Google Maps Integration**
 - [x] Real Google Maps with satellite imagery ✅
