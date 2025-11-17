@@ -83,11 +83,11 @@ AgroVision Frontend is a modern, responsive web application built with React and
 - Environmental condition tracking
 - Visual data presentation
 
-### 📸 **Plant Disease Detection**
-- Integration with external AI plant identification service
-- One-click access to specialized plant ID app
-- Support for 10,000+ plant species
-- High accuracy disease identification
+### 📸 **Plant Identification**
+- Upload plant or leaf images directly from the app
+- CNN-based in-house AI model predicts plant type
+- Fast and accurate plant recognition
+- Helps users identify plant species without expert assistance
 
 ### 📅 **Smart Farmer's Calendar**
 - Region-based farming schedules (North, South, East, West India)
