@@ -75,7 +75,6 @@ We welcome contributions in these areas:
 #### 🌱 **Core Features**
 - New farming tools and calculators
 - Enhanced crop monitoring capabilities
-- Weather integration improvements
 - AI/ML farming recommendations
 
 #### 🎨 **UI/UX Improvements**
