@@ -293,9 +293,9 @@ For deployment instructions, see: **[Frontend Deployment Guide](./Frontend/READM
 
 ### Backend
 Services deployed on various platforms:
-- **[AgriBOT](https://agrovisioncm.vercel.app/agrobot.html)**
-- **[Plants Identification](https://plant-identifier-frontend.vercel.app/)**
-- **[Smart Soil GEE](https://smart-soil-ai-analyser.onrender.com/)**
+- **AgriBot**: [AgriBOT](https://agrovisioncm.vercel.app/agrobot.html)
+- **Plant Identifier**: [Plants Identification](https://plant-identifier-frontend.vercel.app/)
+- **Soil Anlayzer**: [Smart Soil GEE](https://smart-soil-ai-analyser.onrender.com/)
 
 #### Railway Deployment
 Each service can be deployed independently on Railway:
