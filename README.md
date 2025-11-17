@@ -22,7 +22,7 @@
 
 - **🌤️ Real-time Weather Forecasting** - 7-day weather predictions with GPS-based location detection
 - **🗺️ Interactive Farm Mapping** - Google Maps integration with satellite imagery and sensor data visualization
-- **🌱 Plant Disease Detection** - AI-powered plant identification for 24+ species with high accuracy
+- **🌱 Plant Identification** - AI-powered plant species classification for 24+ species with high accuracy
 - **🌾 Soil & Crop Analysis** - Machine learning models for soil moisture prediction and crop recommendations
 - **🤖 AI Chatbot** - Google Gemini-powered agricultural assistant for 24/7 farming support
 - **🛒 Agricultural Marketplace** - Integrated shopping platform with secure Razorpay payment processing
@@ -57,10 +57,34 @@ Modern React application built with:
 
 ### **Backend** (`/backend`)
 FastAPI microservices including:
-- **AgriBOT** - AI chatbot service (Google Gemini + LangChain)
-- **Plants_Identification** - Plant classification (TensorFlow/ResNet50)
-- **Smart_Soil_GEE** - Soil analysis (Google Earth Engine + ML)
-- **AgriVOICEbot** - Voice-enabled plant classifier
+
+#### 1. **AgriBOT** - AI Chatbot Service
+- **Location**: `AgriBOT/`
+- **Description**: Intelligent agricultural chatbot powered by Google Gemini (via LangChain) that provides farming advice, crop recommendations, and agricultural knowledge.
+- **Features**: Google Gemini 1.5 Pro integration, few-shot learning, streaming responses, context-aware conversations
+- **Endpoints**: `GET /health`, `POST /chat/simple`
+- **Port**: 8000
+
+#### 2. **Plants_Identification** - Plant Classification Service
+- **Location**: `Plants_Identification/`
+- **Description**: Deep learning service for identifying plant species using a ResNet50-based CNN model trained on 24+ plant species.
+- **Features**: TensorFlow/Keras model, 24+ plant species classification, batch prediction support, base64 image support
+- **Supported Species**: Amla, Arali, Ashoka, Ashwagandha, Avacado, Bamboo, Basale, Castor, Corn, Curry_Leaf, Doddapatre, Ganike, Guava, Henna, Mint, Nooni, Pappaya, Rose, Wood_sorel, aloevera, banana, mango, orange, watermelon
+- **Endpoints**: `GET /health`, `GET /classes`, `POST /predict`, `POST /predict-base64`, `POST /predict-batch`
+- **Port**: 8001
+
+#### 3. **Smart_Soil_GEE** - Soil & Crop Analysis Service
+- **Location**: `Smart_Soil_GEE/`
+- **Description**: Machine learning service for soil moisture prediction and crop recommendations using Google Earth Engine satellite data.
+- **Features**: Soil moisture level prediction (Low, Medium, High), crop recommendation system, Google Earth Engine integration, satellite band analysis
+- **Port**: Available via API
+
+#### 4. **AgriVOICEbot** - Voice-Enabled Plant Classifier
+- **Location**: `AgriVOICEbot/`
+- **Description**: Voice-enabled plant classification service with text-to-speech output.
+- **Features**: Plant image classification, text-to-speech (TTS) output, audio file generation
+- **Endpoints**: `GET /`, `POST /predict/`, `GET /get_audio`
+- **Port**: 8002
 
 👉 **[View Backend Documentation](./backend/README.md)**
 
@@ -93,8 +117,20 @@ FastAPI microservices including:
 3. **Set up Backend**
    ```bash
    cd backend
+   # Create virtual environment
+   python -m venv venv
+   # On Windows
+   venv\Scripts\activate
+   # On Linux/Mac
+   source venv/bin/activate
+   
    # Install dependencies for each service
-   # See backend/README.md for detailed setup
+   cd AgriBOT && pip install -r requirements.txt && cd ..
+   cd Plants_Identification && pip install -r requirements.txt && cd ..
+   cd Smart_Soil_GEE && pip install -r requirements.txt && cd ..
+   cd AgriVOICEbot && pip install -r requirements.txt && cd ..
+   
+   # Set up environment variables (see Configuration section)
    ```
 
 For detailed installation and configuration instructions, please refer to:
@@ -126,11 +162,23 @@ Experience the full platform with all features including:
 - **shadcn/ui** - Component library
 
 ### Backend
-- **FastAPI** - Web framework
-- **TensorFlow 2.18.0** - Deep learning
-- **LangChain** - LLM framework
-- **Google Gemini** - AI model
-- **Google Earth Engine** - Satellite data
+- **FastAPI 0.115.5** - Modern, fast web framework for building APIs
+- **Python 3.8+** - Programming language
+- **Uvicorn** - ASGI server
+- **TensorFlow 2.18.0** - Deep learning framework
+- **Keras 3.8.0** - High-level neural networks API
+- **LangChain** - Framework for LLM applications
+- **Google Gemini 1.5 Pro** - Large language model
+- **scikit-learn** - Machine learning library
+- **NumPy** - Numerical computing
+- **Pandas** - Data manipulation and analysis
+- **Pillow (PIL)** - Image processing
+- **OpenCV** - Computer vision
+- **Google Earth Engine** - Satellite data analysis
+- **Google Text-to-Speech (gTTS)** - Text-to-speech conversion
+- **gdown** - Google Drive file download
+- **python-dotenv** - Environment variable management
+- **pydantic** - Data validation
 
 For complete tech stack details, see:
 - **[Frontend Tech Stack](./Frontend/README.md#-tech-stack)**
@@ -249,7 +297,239 @@ Services deployed on various platforms:
 - Plants Identification: Available via API
 - Smart Soil GEE: Available via API
 
-For deployment instructions, see: **[Backend Deployment Guide](./backend/README.md#-deployment)**
+#### Railway Deployment
+Each service can be deployed independently on Railway:
+1. Create Railway project
+2. Connect GitHub repository
+3. Set environment variables
+4. Configure build command: `pip install -r requirements.txt`
+5. Configure start command: `uvicorn app:app --host 0.0.0.0 --port $PORT`
+
+#### Docker Deployment
+Create a `Dockerfile` for each service:
+```dockerfile
+FROM python:3.10-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+EXPOSE 8000
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+```
+
+#### Heroku Deployment
+1. Create Procfile:
+   ```
+   web: uvicorn app:app --host 0.0.0.0 --port $PORT
+   ```
+2. Deploy:
+   ```bash
+   heroku create your-app-name
+   git push heroku main
+   ```
+
+For detailed deployment instructions, see: **[Backend Deployment Guide](./backend/README.md#-deployment)**
+
+---
+
+## 📚 API Documentation
+
+### Backend API Endpoints
+
+#### AgriBOT API
+- **Health Check**: `GET /health`
+- **Simple Chat**: `POST /chat/simple`
+  ```json
+  {
+    "user_input": "What crops grow well in sandy soil?"
+  }
+  ```
+- **Access**: `http://localhost:8000`
+- **API Docs**: `http://localhost:8000/docs`
+
+#### Plants_Identification API
+- **Health Check**: `GET /health`
+- **Get Classes**: `GET /classes`
+- **Predict Plant**: `POST /predict` (multipart/form-data)
+- **Predict Base64**: `POST /predict-base64` (application/json)
+- **Batch Predict**: `POST /predict-batch` (up to 10 images)
+- **Access**: `http://localhost:8001`
+- **API Docs**: `http://localhost:8001/docs`
+
+#### Smart_Soil_GEE API
+- Soil moisture prediction
+- Crop recommendation
+- Google Earth Engine data fetching
+
+#### AgriVOICEbot API
+- **Predict with Voice**: `POST /predict/` (multipart/form-data)
+- **Get Audio**: `GET /get_audio`
+- **Access**: `http://localhost:8002`
+- **API Docs**: `http://localhost:8002/docs`
+
+For complete API documentation, see: **[Backend API Docs](./backend/README.md#-api-documentation)**
+
+---
+
+## ⚙️ Configuration
+
+### Environment Variables
+
+#### AgriBOT
+Create `AgriBOT/.env`:
+```env
+GOOGLE_API_KEY=your_google_gemini_api_key
+RAILWAY_ENV=production  # Optional: for Railway deployment
+```
+
+#### Smart_Soil_GEE
+Create `Smart_Soil_GEE/.env`:
+```env
+# Google Earth Engine Service Account
+# Place JSON credentials file in the directory
+# File should be named: swaoil-*.json
+```
+
+### Model Files
+
+#### Plants_Identification
+- Model is automatically downloaded from Google Drive on first run
+- Model file: `plant_species_Model_kaggle.h5`
+- Google Drive ID: `115K_QMpftnQxZ3DwoUargZp5WkOvGXcA`
+
+#### Smart_Soil_GEE
+- `moisture_model.pkl` - Soil moisture classifier
+- `crop_model.pkl` - Crop recommendation classifier
+- `feature_scaler.pkl` - Feature scaler
+- `crop_label_encoder.pkl` - Crop label encoder
+- `moisture_label_encoder.pkl` - Moisture label encoder
+
+### CORS Configuration
+All services have CORS middleware enabled. For production, update CORS settings in each service's `app.py`.
+
+---
+
+## 💻 Development
+
+### Backend Development
+
+#### Running Services
+
+**AgriBOT Service:**
+```bash
+cd backend/AgriBOT
+uvicorn app:app --reload --port 8000
+```
+
+**Plants_Identification Service:**
+```bash
+cd backend/Plants_Identification
+uvicorn app:app --reload --port 8001
+```
+
+**AgriVOICEbot Service:**
+```bash
+cd backend/AgriVOICEbot
+uvicorn app:app --reload --port 8002
+```
+
+**Smart_Soil_GEE Service:**
+```bash
+cd backend/Smart_Soil_GEE
+python predict.py
+```
+
+#### Testing
+- Use FastAPI automatic docs: `http://localhost:PORT/docs`
+- Use curl or Postman for API testing
+
+#### Code Style
+- Follow PEP 8 Python style guide
+- Use type hints where possible
+- Add docstrings to functions
+- Keep functions focused and small
+
+For detailed development guidelines, see: **[Backend Development Guide](./backend/README.md#-development)**
+
+---
+
+## 🔧 Troubleshooting
+
+### Common Issues
+
+#### Model Not Loading (Plants_Identification)
+- **Issue**: Model file not found
+- **Solution**: Model will auto-download from Google Drive on first run
+- **Manual**: Download from Google Drive ID: `115K_QMpftnQxZ3DwoUargZp5WkOvGXcA`
+
+#### Google API Key Error (AgriBOT)
+- **Issue**: `No GOOGLE_API_KEY found!`
+- **Solution**: 
+  - Create `.env` file in `AgriBOT/` directory
+  - Add: `GOOGLE_API_KEY=your_key_here`
+  - Or set environment variable: `export GOOGLE_API_KEY=your_key_here`
+
+#### Google Earth Engine Authentication (Smart_Soil_GEE)
+- **Issue**: Authentication failed
+- **Solution**:
+  - Authenticate: `earthengine authenticate`
+  - Or use service account JSON file
+  - Place credentials file in `Smart_Soil_GEE/` directory
+
+#### CORS Errors
+- **Issue**: CORS policy blocking requests
+- **Solution**: Update CORS middleware in `app.py` to allow your frontend domain
+
+#### Port Already in Use
+- **Issue**: Port 8000 already in use
+- **Solution**: 
+  ```bash
+  # Find and kill process (Linux/Mac)
+  lsof -ti:8000 | xargs kill -9
+  # Or use different port
+  uvicorn app:app --port 8001
+  ```
+
+#### TensorFlow Memory Issues
+- **Issue**: Out of memory errors
+- **Solution**:
+  - Reduce batch size
+  - Use GPU if available
+  - Limit image resolution
+
+For more troubleshooting help, see: **[Backend Troubleshooting Guide](./backend/README.md#-troubleshooting)**
+
+---
+
+## 🆘 Support
+
+For issues and questions:
+
+- **Create an issue** in the repository
+- **Check documentation**:
+  - [Frontend README](./Frontend/README.md#-support)
+  - [Backend README](./backend/README.md#-support)
+- **Review health endpoints** for system status
+
+### Health Check Endpoints
+- **AgriBOT**: `http://localhost:8000/health`
+- **Plants_Identification**: `http://localhost:8001/health`
+- **AgriVOICEbot**: `http://localhost:8002/`
+
+### API Documentation
+FastAPI automatically generates interactive API documentation:
+- **Swagger UI**: `http://localhost:PORT/docs`
+- **ReDoc**: `http://localhost:PORT/redoc`
+
+### Getting Help
+1. Check the [Troubleshooting](#-troubleshooting) section
+2. Review service-specific README files
+3. Check FastAPI documentation: https://fastapi.tiangolo.com/
+4. Open an issue on GitHub with:
+   - Service name
+   - Error message
+   - Steps to reproduce
+   - Environment details
 
 ---
 
@@ -272,6 +552,30 @@ For detailed contribution guidelines:
 ## 📄 License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+```
+MIT License
+
+Copyright (c) 2025 AgroVision
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
 
 ---
 
@@ -302,18 +606,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - **Google** - For Maps API, Gemini API, and Earth Engine
 - **shadcn** - For the beautiful UI components
 - **All Contributors** - For making this project better
-
----
-
-## 🆘 Support
-
-For issues and questions:
-
-- **Create an issue** in the repository
-- **Check documentation**:
-  - [Frontend README](./Frontend/README.md#-support)
-  - [Backend README](./backend/README.md#-support)
-- **Review health endpoints** for system status
 
 ---
 
