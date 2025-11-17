@@ -9,7 +9,7 @@
 <div align="center">
   <h3>🚀 Revolutionize your farming with AI-driven insights, real-time monitoring, and smart recommendations for maximum yield and sustainability.</h3>
   
-  **🌐 ADD Deployed website link here** • **📚 [Frontend Docs](./Frontend/README.md)** • **🔧 [Backend Docs](./backend/README.md)**
+  **🌐 [AgroVision](https://agrovisioncm.vercel.app/)** • **📚 [Frontend Docs](./Frontend/README.md)** • **🔧 [Backend Docs](./backend/README.md)**
 </div>
 
 ---
@@ -287,15 +287,15 @@ For complete feature documentation, see:
 ## 🚀 Deployment
 
 ### Frontend
-**ADD Deployed website link here**
+**[AgroVision](https://agrovisioncm.vercel.app/)**
 
 For deployment instructions, see: **[Frontend Deployment Guide](./Frontend/README.md#-deployment)**
 
 ### Backend
 Services deployed on various platforms:
-- AgriBOT: ADD Deployed website link here
-- Plants Identification: Available via API
-- Smart Soil GEE: Available via API
+- AgriBOT: **[](https://agrovisioncm.vercel.app/agrobot.html)**
+- Plants Identification: **[](https://plant-identifier-frontend.vercel.app/)**
+- Smart Soil GEE: **[](https://smart-soil-ai-analyser.onrender.com/)**
 
 #### Railway Deployment
 Each service can be deployed independently on Railway:
