@@ -33,7 +33,6 @@
 - [License](#-license)
 - [Acknowledgments](#-acknowledgments)
 - [Support](#-support)
-- [Made by Swayam](#-made-by-swayam)
 
 ---
 
