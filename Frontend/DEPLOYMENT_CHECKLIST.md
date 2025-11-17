@@ -23,7 +23,6 @@
 - [x] Error handling implemented
 
 ### 🎥 **Demo & Features**
-- [x] Demo button links to correct YouTube video
 - [x] All navigation working properly
 - [x] Mobile responsive design
 - [x] Payment integration ready (Razorpay)
