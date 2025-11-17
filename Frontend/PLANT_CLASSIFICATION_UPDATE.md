@@ -7,7 +7,7 @@
 - **Removed**: Complex API testing, CORS handling, and error debugging code
 - **Removed**: File upload functionality, image preview, and analysis processing
 - **Removed**: Demo mode and mock data systems
-- **Added**: Simple, elegant redirect button to `serenitycm.vercel.app`
+- **Added**: Simple, elegant redirect button to `agrovisioncm.vercel.app`
 
 ### 🎨 **New Design**
 - **Clean Interface**: Professional call-to-action card design
