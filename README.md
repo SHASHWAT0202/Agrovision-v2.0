@@ -22,7 +22,7 @@
 
 - **🌤️ Real-time Weather Forecasting** - 7-day weather predictions with GPS-based location detection
 - **🗺️ Interactive Farm Mapping** - Google Maps integration with satellite imagery and sensor data visualization
-- **🌱 Plant Disease Detection** - AI-powered plant identification for 24+ species with high accuracy
+- **🌱 Plant Identification** - AI-powered plant identification for 24+ species with high accuracy
 - **🌾 Soil & Crop Analysis** - Machine learning models for soil moisture prediction and crop recommendations
 - **🤖 AI Chatbot** - Google Gemini-powered agricultural assistant for 24/7 farming support
 - **🛒 Agricultural Marketplace** - Integrated shopping platform with secure Razorpay payment processing
